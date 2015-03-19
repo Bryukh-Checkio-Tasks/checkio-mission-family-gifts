@@ -5,7 +5,8 @@ from checkio.referees.io import CheckiOReferee
 from tests import TESTS
 
 cover = """def cover(f, data):
-    return f(tuple(tuple(d) for d in data))"""
+    return f(set(str(x) for x in data[0]), tuple(set(str(n) for n in coup) for coup in data[1]))
+"""
 
 ERR_REPEAT = "Every person should be able to give to a different" \
              " person than he offered the past years"
