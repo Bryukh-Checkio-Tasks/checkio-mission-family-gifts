@@ -44,7 +44,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
 
             var checkioInput = data.in || [['Cara', 'Adam', 'Veronica'], [['Adam', 'Veronica']]];
             var checkioInputStr = fname + '(' + JSON.stringify(checkioInput[0]).replace("[", "{").replace("]", "}") +
-                    ", " + JSON.stringify(checkioInput[0]).replace("[[", "({").replace("]]", "},)").replace(/]/g, "}").replace(/\[/g, "{") + ')';
+                    ", " + JSON.stringify(checkioInput[1]).replace("[[", "({").replace("]]", "},)").replace(/]/g, "}").replace(/\[/g, "{") + ')';
 
             var failError = function (dError) {
                 $content.find('.call').html(checkioInputStr);
