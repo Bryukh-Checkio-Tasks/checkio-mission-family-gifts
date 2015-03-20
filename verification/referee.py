@@ -18,8 +18,8 @@ ERR_WRONG_NAMES = "Wrong Family names"
 
 def checker(data, user_result):
     total = data[0]
-    family = set(data[1])
-    couples = tuple(set(x) for x in data[2])
+    family = set(data[1][0])
+    couples = tuple(set(x) for x in data[1][1])
     if (not isinstance(user_result, (list, tuple)) or
             any(not isinstance(chain, (list, tuple)) for chain in user_result)):
         return False, ERR_TYPE
