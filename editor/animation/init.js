@@ -40,7 +40,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
             }
 
             //YOUR FUNCTION NAME
-            var fname = 'find_cycle';
+            var fname = 'find_chains';
 
             var checkioInput = data.in || [['Cara', 'Adam', 'Veronica'], [['Adam', 'Veronica']]];
             var checkioInputStr = fname + '(' + JSON.stringify(checkioInput[0]).replace("[", "{").replace("]", "}") +
@@ -78,8 +78,6 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
                 var resultText = data.ext["result_addon"];
                 var vertexes = data.ext["vertexes"];
 
-                var svg = new SVG($content.find(".explanation")[0]);
-                svg.draw(vertexes, checkioInput);
 
                 $content.find('.output').html('&nbsp;Your result:&nbsp;' + JSON.stringify(userResult));
                 if (!result) {
@@ -143,48 +141,6 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
 
             var colorWhite = "#FFFFFF";
 
-
-            var R = 160;
-            var r = 15;
-
-            var pad = 10;
-
-            var size = 2 * pad + 2 * (R + r);
-
-            var center = size / 2;
-
-            var paper = Raphael(dom, size, size);
-
-            var networkObjects = {};
-
-            var attrCircle = {"stroke": colorBlue4, "stroke-width": 2, "fill": colorBlue1};
-            var attrName = {"font-family": "Roboto, Arial, sans-serif", "font-size": r * 1.5};
-            var attrLine = {"stroke": colorBlue4, "stroke-width": 3};
-
-            this.draw = function (n, connections) {
-                var angle = Math.PI * 2 / n;
-
-                var circles = [];
-
-                for (var i = 0; i < n; i++) {
-                    var x = center - Math.cos(i * angle + Math.PI / 2) * R;
-                    var y = center - Math.sin(i * angle + Math.PI / 2) * R;
-                    paper.circle(x, y, r).attr(attrCircle);
-                    paper.text(x, y, i + 1).attr(attrName);
-                    circles.push([x, y]);
-                }
-                for (i = 0; i < connections.length; i++) {
-                    var fr = connections[i][0];
-                    var to = connections[i][1];
-                    paper.path(
-                        Raphael.format("M{0},{1}L{2},{3}",
-                            circles[fr-1][0],
-                            circles[fr-1][1],
-                            circles[to-1][0],
-                            circles[to-1][1])).attr(attrLine).toBack();
-
-                }
-            }
 
         }
 
