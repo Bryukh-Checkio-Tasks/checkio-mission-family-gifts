@@ -42,8 +42,9 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
             //YOUR FUNCTION NAME
             var fname = 'find_cycle';
 
-            var checkioInput = data.in || [[1, 2], [2, 3], [3, 4], [4, 5], [5, 7], [7, 6], [8, 5], [8, 4], [1, 5], [2, 4]];
-            var checkioInputStr = fname + '(' + JSON.stringify(checkioInput).replace(/\[/g, "(").replace(/]/g, ")") + ')';
+            var checkioInput = data.in || [['Cara', 'Adam', 'Veronica'], [['Adam', 'Veronica']]];
+            var checkioInputStr = fname + '(' + JSON.stringify(checkioInput[0]).replace("[", "{").replace("]", "}") +
+                    ", " + JSON.stringify(checkioInput[0]).replace("[[", "({").replace("]]", "},)").replace(/]/g, "}").replace(/\[/g, "{") + ')';
 
             var failError = function (dError) {
                 $content.find('.call').html(checkioInputStr);

@@ -20,7 +20,7 @@ def checker(data, user_result):
     total = data[0]
     family = set(data[1])
     couples = tuple(set(x) for x in data[2])
-    if (not isinstance(user_result, (list(tuple))) or
+    if (not isinstance(user_result, (list, tuple)) or
             any(not isinstance(chain, (list, tuple)) for chain in user_result)):
         return False, ERR_TYPE
     if len(user_result) < total:
