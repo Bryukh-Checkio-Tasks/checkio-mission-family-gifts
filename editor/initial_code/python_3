@@ -28,4 +28,4 @@ if __name__ == '__main__':
     assert checker(find_chains, {'Curtis', 'Lee', 'Rachel', 'Javier'},
                    ({'Rachel', 'Javier'}, {'Curtis', 'Lee'}), 2), "Pairs"
     assert checker(find_chains, {'Philip', 'Sondra', 'Mary', 'Selena', 'Eric', 'Phyllis'},
-                   ({'Philip', 'Sondra'}, {'Eric', 'Mary'}), 3), "Pairs and Single"
+                   ({'Philip', 'Sondra'}, {'Eric', 'Mary'}), 4), "Pairs and Singles"
