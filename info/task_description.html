@@ -35,7 +35,8 @@
         <strong>Example:</strong>
     </p>
 <textarea data-code="python">
-
+find_chains({'Gary', 'Jeanette', 'Hollie'}, ({'Gary', 'Jeanette'},) # 0 chains
+find_chains, {'Curtis', 'Lee', 'Rachel', 'Javier'}, ({'Rachel', 'Javier'}, {'Curtis', 'Lee'}) # 2 chains
 </textarea>
 </div>
 
@@ -46,5 +47,7 @@
 
 <p>
     <strong>Precondition:</strong>
-
 </p>
+<pre>
+len(couples) <= 7
+</pre>

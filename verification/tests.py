@@ -65,12 +65,11 @@ TESTS = {
                          ['Alex', 'Eugenia'], ['Monique', 'Rene']]]],
         },
         {
-            "input": [
-                ['Kasey', 'Madelyn', 'Marvin', 'Julia', 'Earlene', 'Cathryn', 'Fern', 'Derrick',
-                 'Lois'], []],
-            "answer": [8,
-                       [['Kasey', 'Madelyn', 'Marvin', 'Julia', 'Earlene', 'Cathryn', 'Fern',
-                         'Derrick', 'Lois'], []]],
+            "input": [['Dorothea', 'Vincent', 'Irene', 'Lula', 'Paulette', 'Bill', 'Virginia'],
+                []],
+            "answer": [5,
+                       [['Dorothea', 'Vincent', 'Irene', 'Lula', 'Paulette', 'Bill', 'Virginia'],
+                           []]],
         },
         {
             "input": [
