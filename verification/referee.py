@@ -12,7 +12,8 @@ ERR_REPEAT = "Every person should be able to give to a different" \
              " person than he offered the past years"
 ERR_COUPLE = "Couples should not give to one another"
 ERR_COUNT = "You can find {} chain(s)."
-ERR_TYPE = "Wrong result type"
+ERR_TYPE = "Wrong result type. " \
+           "The longest list of gift chains as a list/tuple of lists/tuples with strings."
 ERR_WRONG_NAMES = "Wrong Family names"
 
 
@@ -27,6 +28,8 @@ def checker(data, user_result):
         return False, ERR_COUNT.format(total)
     gifted = set()
     for chain in user_result:
+        if not isinstance(chain, (list, tuple)):
+            return False, ERR_TYPE
         if set(chain) != family or len(chain) != len(family):
             return False, ERR_WRONG_NAMES
         for f, s in zip(chain, chain[1:] + [chain[0]]):
