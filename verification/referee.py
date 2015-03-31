@@ -28,7 +28,7 @@ def checker(data, user_result):
         return False, ERR_COUNT.format(total)
     gifted = set()
     for chain in user_result:
-        if not isinstance(chain, (list, tuple)):
+        if not isinstance(chain, (list, tuple)) or not all(isinstance(el, str) for el in chain):
             return False, ERR_TYPE
         if set(chain) != family or len(chain) != len(family):
             return False, ERR_WRONG_NAMES
