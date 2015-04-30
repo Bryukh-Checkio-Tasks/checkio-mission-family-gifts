@@ -67,7 +67,7 @@ TESTS = {
         {
             "input": [['Dorothea', 'Vincent', 'Irene', 'Lula', 'Paulette', 'Bill', 'Virginia'],
                 []],
-            "answer": [5,
+            "answer": [6,
                        [['Dorothea', 'Vincent', 'Irene', 'Lula', 'Paulette', 'Bill', 'Virginia'],
                            []]],
         },
